@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Qesestion</title>
+    
+<link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- goggle font poppins -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,400;0,500;0,700;1,600&family=Roboto:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+</head>
+<!-- tailwind custom classes -->
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          clifford: '#da373d',
+          'bike-primary':'#E76F51',
+          'bike-primary-bg':'rgba(231, 111, 81, 0.10)',
+
+        }
+      }
+    }
+  }
+</script>
+<style>
+ 
+  /* custom style */
+  .footer-color{
+    color:#0b0d17;
+  }
+  .font-poppins{
+    font-family: 'Bebas Neue', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+  }
+</style>
+
+
+<body class="font-poppins">
+<section class="my-4">
+  
+<h3 class="text-5xl font-semibold text-center">Blog  
+  <span class="text-bike-primary">Questions</span></h3>
+  <div class="hero min-h-screen bg-base-200">
+    <div class="hero-content flex-col lg:flex-row">
+     
+      <div>
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" checked="checked" /> 
+          <div class="collapse-title text-3xl font-medium">
+            Discuss the scope of `var`, `let`, and `const`?
+          </div>
+          <div class="collapse-content"> 
+<p class="text-cyan-700">  var:
+Variables declared with var are function-scoped. 
+This means that they are only accessible within the function in which they are declared.
+If declared outside any function, they become globally scoped, 
+meaning they are accessible throughout the entire program.
+var declarations are hoisted to the top of their scope, 
+which means you can use the variable before it's declared. 
+However, the value assigned to the variable is not hoisted. 
+<p>function example() {</p>
+<p >(true) {</p>
+<p> var x = 10;</p>
+<p>console.log(x); // 10
+ }</p>
+<p> console.log(x); // 10
+}</p>
+example();
+Note: Using var is considered outdated and is not recommended in modern 
+JavaScript development due to its lack of block scoping and potential issues with 
+unintended global variables.
+</p>
+<br>
+
+<p class="text-cyan-700">let:
+Variables declared with let are block-scoped. 
+They are only accessible within the block (enclosed by curly braces) in which they are defined.
+let variables are not hoisted to the top of their scope. 
+They exist in the temporal dead zone until the point of declaration.
+</p>
+<p>function example() {</p>
+<p> if (true) {</p>
+<p> let y = 20;</p>
+<p>  console.log(y); // 20
+}</p>
+<p>   // console.log(y); // ReferenceError: y is not defined
+}
+
+example();</p>
+<p>let allows you to reassign values to the variable.</p>
+<p>let count = 0;</p>
+<p>count = 1; // This is valid</p>
+
+<p class="text-cyan-800">const:
+Variables declared with const are block-scoped like let.
+const variables must be initialized at the time of declaration,
+and their values cannot be reassigned.</p>
+
+<p>const PI = 3.14;
+// PI = 3.1415; // Error: Assignment to a constant variable</p>
+<p class="text-cyan-800">While const prevents reassignment, it does not make objects or arrays 
+declared with it immutable. You can still modify the properties of objects or elements of arrays.</p>
+<p>const person = { name: "John" };
+    person.name = "Jane"; // This is valid</p>
+<p class="text-cyan-800">In modern JavaScript development, it's generally recommended to use const by 
+default and only use let when you know the variable will be reassigned. 
+This helps make your code more predictable and reduces the risk of accidental 
+variable reassignments.Avoid using var due to its function-scoping behavior and hoisting quirks.</p>
+
+
+
+
+          </div>
+        </div>
+        <br>
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-3xl font-medium">
+            Tell us the use cases of `null` and `undefined`?
+          </div>
+          <div class="collapse-content"> 
+            <p class="text-cyan-800">What is Null?
+                We have heard the word "null" many times in English. 
+                Its literal meaning is having no value. The same meaning is analogous to the meaning of null in programming. 
+                Null is basically an assignment value given to a variable. 
+                The variable which has been assigned as null contains no value.
+                When we assign null as a value to any variable, it means that it is empty or blank. 
+                It is to show that the variable has no value. Also, null is an object in JavaScript. When it gets assigned to a variable, 
+                it represents no value. The setting of the value must be done manually by 
+                the user as JavaScript never sets the value as null. An object can be emptied by 
+                setting it to null..</p>
+
+                <p>Syntax of Null and Undefined in JavaScript</p>
+                <p>var x = null;</p>
+                <p>Here we have assigned the value null to variable x.</p>
+                <p class="text-cyan-800">What is Undefined?
+                    There is a subtle difference between null and undefined, but as a programmer,
+                    it is important that we understand it clearly.
+                    As the name suggests, undefined means "not defined". 
+                    So we declare a variable but do not assign a value to it,
+                    the variable becomes undefined.Unlike null, the value of an undefined variable is set by JavaScript as undefined. 
+                    The variable gets created at the run-time. When we do not pass an argument for a 
+                    function parameter, the default value is taken as undefined. 
+                    Besides, when a function doesn't return a value, it returns undefined.</p>
+                <p>Syntax of Null and Undefined in JavaScript</p>
+                <p>var x;</p>
+                <p>Type of Null and Undefined
+                    In JavaScript, to check the type of variable, we use the "typeof" operator.
+                    
+                    Null-</p>
+                <p>console.log(typeof null);</p>
+                <p>Output-
+
+                object</p>
+                <p>As discussed above, the type of null is an object.
+
+                    Example-
+                    
+                    var x=null;
+                    console.log(typeof(x));</p>
+                <p>Output-
+
+                    object
+                    Here we have assigned the null value to variable x and then checked its type.</p>
+                <p>Undefined-
+
+                    console.log(typeof undefined);</p>
+                <p>As discussed above, the type of undefined is undefined itself. So basically, it is a data type.
+
+                    Example-
+                    
+                    var x;
+                    console.log(typeof(x));
+                    
+                    Output-
+                    
+                    undefined</p>
+          </div>
+        </div>
+        <br>
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" /> 
+          <div class="collapse-title text-3xl font-medium">
+            What do you mean by REST API!?
+          </div>
+          <div class="collapse-content"> 
+            <p class="text-cyan-800">An API is a set of definitions and protocols for building and integrating application software.
+                 It's sometimes referred to as a contract between an information provider and an information user—establishing the content required from the consumer (the call) and the content required by the producer (the response). For example, the API design for a weather service could specify that the user supply a zip code and that the producer reply with a 2-part answer,
+                 the first being the high temperature, and the second being the low.  
+                In other words, if you want to interact with a computer or system to 
+                retrieve information or perform a function, an API helps you communicate 
+                what you want to that system so it can understand and fulfill the request. </p>
+          </div>
+        </div>
+        <br>
+        
+    </div>
+  </div>
+</section>
+</main>
+
+
+
+    
+    
+</body>
+</html>
